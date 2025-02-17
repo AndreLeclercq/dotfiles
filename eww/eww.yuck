@@ -1,0 +1,215 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;  SHOW BAR ON MONITORS  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+(defwindow bar0
+  :monitor 1
+  :windowtype "desktop"
+  :geometry (geometry :y "-10px"
+                      :width "98%"
+                      :height "40px"
+                      :anchor "top center")
+  :exclusive true
+  (bar-fix-dp4))
+
+(defwindow bar1
+  :monitor 0
+  :windowtype "desktop"
+  :geometry (geometry :y "-10px"
+                      :width "98%"
+                      :height "40px"
+                      :anchor "top center")
+  :stacking "bg"
+  (bar-fix-hdmi0))
+
+(defwindow bar2
+  :monitor 2
+  :windowtype "desktop"
+  :geometry (geometry :y "-10px"
+                      :width "98%"
+              
+              :height "40px"
+                      :anchor "top center")
+  :exclusive true
+  (bar-fix-dp2))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;       MANAGE BAR       ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; ECRAN GAUCHE ;;
+
+(defwidget bar-fix-dp4 []
+  (box :class "bar" :space-evenly true :orientation "h"
+    (box :class "start" :halign "start" :space-evenly false
+      (workspaces-widget-dp4)
+      (clock)
+      (date))
+    (box :class "end" :halign "end" :space-evenly false
+     (common-widgets)
+     (systray))
+    ))
+
+;; ECRAN MILIEU ;;
+
+(defwidget bar-fix-hdmi0 []
+  (box :class "bar" :space-evenly true :orientation "h"
+    (box :class "start" :halign "start" :space-evenly false
+      (workspaces-widget-hdmi0))
+    (box :class "end" :halign "end" :space-evenly false
+     (common-widgets))
+    ))
+
+;; ECRAN DROIT ;;
+
+(defwidget bar-fix-dp2 []
+  (box :class "bar" :space-evenly true :orientation "h"
+    (box :class "start" :halign "start" :space-evenly false
+      (workspaces-widget-dp2)
+      (clock)
+      (date))
+    (box :class "end" :halign "end" :space-evenly false
+     (common-widgets)
+     (systray))
+    ))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;         WIDGETS        ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; WIDGETS COMMUNS ;;
+
+(defwidget common-widgets []
+  (box :class "end" 
+       :halign "end" 
+       :space-evenly false
+    (updates)
+    (linux-version)
+    (git-version)
+    (docker-version)
+    (rust-version)
+    (node-version)))
+
+;; DATE TIME ;;
+
+(defpoll time
+  :interval "1s"
+  :initial "00:00"
+  `date +%H:%M`)
+
+(defpoll date
+  :interval "1m"
+  :initial "jeudi 1 janvier"
+  `LC_TIME=fr_FR.UTF-8 date "+%A %d %B"`)
+
+(defwidget clock []
+  (box :class "clock" :halign "start" :space-evenly false
+    (label :text time)
+  ))
+
+(defwidget date []
+  (box :class "date" :halign "start" :space-evenly false
+    (label :text date)
+  ))
+
+;; LINUX VERSION ;;
+
+(defpoll linux_shell_output :interval "1m"
+  "~/.config/eww/scripts/linux-version.sh")
+
+(defwidget linux-version []
+  (box :class "linux-version"
+    (label :text linux_shell_output)))
+
+;; GIT VERSION ;;
+
+(defpoll git_shell_output :interval "1m"
+  "~/.config/eww/scripts/git-version.sh")
+
+(defwidget git-version []
+  (box :class "git-version"
+    (label :text git_shell_output)))
+
+;; DOCKER VERSION ;;
+
+(defpoll docker_shell_output :interval "1m"
+  "~/.config/eww/scripts/docker-version.sh")
+
+(defwidget docker-version []
+  (eventbox :cursor "pointer"
+            :onclick "alacritty --class FloatingAlacritty,FloatingAlacritty -e bash -c 'docker ps; echo \"Appuyer sur une touche pour fermer\"; read -n 1' &"
+    (box :class "docker-version"
+      (label :text docker_shell_output))))
+
+;; RUST VERSION ;;
+
+(defpoll rust_shell_output :interval "1m"
+  "~/.config/eww/scripts/rust-version.sh")
+
+(defwidget rust-version []
+  (box :class "rust-version"
+    (label :text rust_shell_output)))
+
+;; NODE VERSION ;;
+
+(defpoll node_shell_output :interval "10s"
+  "~/.config/eww/scripts/node-version.sh")
+
+(defwidget node-version []
+  (box :class "node-version"
+    (label :text node_shell_output)))
+
+;; UPDATES ;;
+
+(defpoll updates_shell_output :interval "1m"
+  "~/.config/eww/scripts/updates.sh")
+
+(defwidget updates []
+  (eventbox :cursor "pointer"
+            :onclick "alacritty --class FloatingAlacritty,FloatingAlacritty -e paru &"
+    (box :class "updates"
+      (label :text updates_shell_output))))
+
+;; WORKSPACES ;;
+
+(deflisten workspaces :initial "[]"
+  "~/.config/eww/scripts/workspaces.sh")
+
+(defwidget workspace-entry [name focused urgent]
+  (eventbox :onclick "i3-msg workspace ${name}"
+    (box :class "workspace ${focused ? "focused" : ""} ${urgent ? "urgent" : ""}"
+      (label :text "${name}"))))
+
+(defwidget workspaces-widget-dp4 []
+  (box :class "workspaces-widget"
+       :orientation "h"
+       :space-evenly false
+       :halign "start"
+    (for workspace in workspaces
+      (box :visible {workspace.name == "1" || workspace.name == "2"}
+        (workspace-entry :name "${workspace.name}"
+                        :focused "${workspace.focused}"
+                        :urgent "${workspace.urgent}")))))
+
+(defwidget workspaces-widget-hdmi0 []
+  (box :class "workspaces-widget"
+       :orientation "h"
+       :space-evenly false
+       :halign "start"
+    (for workspace in workspaces
+      (box :visible {workspace.name == "3" || workspace.name == "4"}
+        (workspace-entry :name "${workspace.name}"
+                        :focused "${workspace.focused}"
+                        :urgent "${workspace.urgent}")))))
+
+(defwidget workspaces-widget-dp2 []
+  (box :class "workspaces-widget"
+       :orientation "h"
+       :space-evenly false
+       :halign "start"
+    (for workspace in workspaces
+      (box :visible {workspace.name == "5" || workspace.name == "6"}
+        (workspace-entry :name "${workspace.name}"
+                        :focused "${workspace.focused}"
+                        :urgent "${workspace.urgent}")))))
