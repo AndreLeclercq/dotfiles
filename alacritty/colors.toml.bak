@@ -1,0 +1,39 @@
+[colors.primary]
+background = "#0d0f29"  # black (nvim bg)
+foreground = "#e4e6f3"  # white
+
+[colors.normal]
+black = "#0b0d24"    # darker_black
+red = "#cc4044"      # red
+green = "#8abe8d"    # Changé pour vert plus vif (vibrant_green)
+yellow = "#d7ae5f"   # yellow
+blue = "#6791c9"     # Changé pour bleu plus clair (cyan)
+magenta = "#749689"  # purple
+cyan = "#6791c9"     # cyan
+white = "#e4e6f3"    # white
+
+[colors.bright]
+black = "#3f486a"    # grey
+red = "#e45458"      # pink
+green = "#9fcfa2"    # Encore plus vif que vibrant_green
+yellow = "#e2b866"   # sun
+blue = "#7aa2d4"     # Version plus claire du cyan
+magenta = "#d94448"  # baby_pink
+cyan = "#749689"     # teal
+white = "#f2f3fb"    # base07
+
+[colors.cursor]
+text = "#0d0f29"     # black
+cursor = "#e4e6f3"   # white
+
+[colors.selection]
+text = "#e4e6f3"     # white
+background = "#1f264a" # base02
+
+[colors.search.matches]
+foreground = "#0d0f29" # black
+background = "#d7ae5f" # yellow
+
+[colors.search.focused_match]
+foreground = "#0d0f29" # black
+background = "#7cae7f" # green

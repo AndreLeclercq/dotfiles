@@ -6,10 +6,10 @@
 local M = {}
 
 M.base46 = {
-	theme = "fougere",
+	theme = "vop",
   font = {
-    family = "Iosevka Nerd Font Mono",
-    size = 12,
+    family = "Hack",
+    size = 14,
   },
 
 	-- hl_override = {

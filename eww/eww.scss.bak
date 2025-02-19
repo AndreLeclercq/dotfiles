@@ -1,0 +1,103 @@
+* {
+  font-family: JetBrainsMono Nerd Font, FontAwesome;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: rgba(0,0,0,0);
+}
+
+.bar {
+  background-color: rgba(58, 81, 93, .2);
+  color: #F8F8F2;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  border-radius: 0px 0px 15px 15px;
+  transition-duration: .5s;
+  border-bottom-color: #282A36;
+  border-bottom-style: solid;
+  padding-top: 10px;
+}
+
+.linux-version,
+.git-version,
+.docker-version,
+.rust-version, 
+.node-version,
+.updates,
+.clock,
+.date,
+.workspace {
+  padding: 0px 10px;
+  margin: 6px 3px;
+	border-radius: 10px;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+}
+
+.start,
+.end {
+  margin: 0 15px;
+}
+
+.clock {
+  font-size: 14px;
+  margin-right: 6px;
+}
+
+.date,
+.clock,
+.workspace-display {
+  background-color: #383E42;
+  border-bottom-color: #292C33;
+}
+
+.linux-version {
+  background-color: #FFF;
+  color: #000;
+  border-bottom-color: #FF8C00;
+}
+
+.git-version {
+  background-color: #F1502F;
+  border-bottom-color: #C03D24;
+}
+
+.docker-version {
+  background-color: #1793d1;
+  border-bottom-color: #0F6F9A;
+}
+
+.rust-version {
+  background-color: #B7410E;
+  border-bottom-color: #8B3E0B;
+}
+
+.node-version {
+  background-color: #8CC84B;
+  color: #1e1e1e;
+  border-bottom-color: #3c873a;
+}
+
+.updates {
+  background-color: #A53C9A;
+  border-bottom-color: #7A2B6D;
+  padding-left: 12px;
+}
+
+.workspace {
+  border-radius: 10px;
+  background-color: #383E42;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: #292C33;
+  transition: all 0.3s ease;
+}
+
+.workspace.focused {
+  background-color: #1793d1;
+  border-bottom-color: #0F6F9A;
+}
+
+.workspace.urgent {
+  background-color: #A53C9A;
+  border-bottom-color: #7A2B6D;
+}

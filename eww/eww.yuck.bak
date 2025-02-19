@@ -5,35 +5,33 @@
 
 (defwindow bar0
   :monitor 1
-  :windowtype "dock"
-  :geometry (geometry :y "0px"
-                      :width "100%"
-                      :height "20px"
+  :windowtype "desktop"
+  :geometry (geometry :y "-10px"
+                      :width "98%"
+                      :height "40px"
                       :anchor "top center")
   :exclusive true
-  :stacking "bg"
   (bar-fix-dp4))
 
 (defwindow bar1
   :monitor 0
-  :windowtype "dock"
-  :geometry (geometry :y "0px"
-                      :width "100%"
-                      :height "30px"
+  :windowtype "desktop"
+  :geometry (geometry :y "-10px"
+                      :width "98%"
+                      :height "40px"
                       :anchor "top center")
   :stacking "bg"
   (bar-fix-hdmi0))
 
 (defwindow bar2
   :monitor 2
-  :windowtype "dock"
-  :geometry (geometry :y "0px"
-                      :width "100%"
+  :windowtype "desktop"
+  :geometry (geometry :y "-10px"
+                      :width "98%"
               
-              :height "20px"
+              :height "40px"
                       :anchor "top center")
   :exclusive true
-  :stacking "bg"
   (bar-fix-dp2))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;

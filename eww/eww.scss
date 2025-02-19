@@ -1,20 +1,18 @@
 * {
-  font-family: JetBrainsMono Nerd Font, FontAwesome;
-  font-size: 12px;
+  font-family: Helvetica Neue, FontAwesome;
+  font-size: 13px;
   font-weight: bold;
-  background-color: rgba(0,0,0,0);
 }
 
 .bar {
-  background-color: rgba(58, 81, 93, .2);
-  color: #F8F8F2;
+  background-color: #7C444F;
+  color: #eeeeee;
   transition-property: background-color;
   transition-duration: 0.5s;
-  border-radius: 0px 0px 15px 15px;
-  transition-duration: .5s;
-  border-bottom-color: #282A36;
+  border-bottom-color: #4a2930;
   border-bottom-style: solid;
-  padding-top: 10px;
+  padding: 0px;
+  margin: 0px;
 }
 
 .linux-version,
@@ -26,16 +24,15 @@
 .clock,
 .date,
 .workspace {
-  padding: 0px 10px;
-  margin: 6px 3px;
-	border-radius: 10px;
+  padding: 2px 8px;
+  margin: 2px 3px;
   border-bottom-width: 2px;
   border-bottom-style: solid;
 }
 
 .start,
 .end {
-  margin: 0 15px;
+  margin: 0 5px;
 }
 
 .clock {
@@ -46,58 +43,57 @@
 .date,
 .clock,
 .workspace-display {
-  background-color: #383E42;
-  border-bottom-color: #292C33;
+  background-color: #9F5255;
+  border-bottom-color: #7C444F;
 }
 
 .linux-version {
-  background-color: #FFF;
-  color: #000;
-  border-bottom-color: #FF8C00;
+  background-color: #F39E60;
+  color: #4a2930;
+  border-bottom-color: #E16A54;
 }
 
 .git-version {
-  background-color: #F1502F;
-  border-bottom-color: #C03D24;
+  background-color: #ff9e64;
+  border-bottom-color: #f7768e;
 }
 
 .docker-version {
-  background-color: #1793d1;
-  border-bottom-color: #0F6F9A;
+  background-color: #7aa2f7;
+  border-bottom-color: #5676c5;
 }
 
 .rust-version {
-  background-color: #B7410E;
-  border-bottom-color: #8B3E0B;
+  background-color: #e0af68;
+  border-bottom-color: #b38d53;
 }
 
 .node-version {
-  background-color: #8CC84B;
-  color: #1e1e1e;
-  border-bottom-color: #3c873a;
+  background-color: #9ece6a;
+  color: #4a2930;
+  border-bottom-color: #7ea554;
 }
 
 .updates {
-  background-color: #A53C9A;
-  border-bottom-color: #7A2B6D;
+  background-color: #E16A54;
+  border-bottom-color: #9F5255;
   padding-left: 12px;
 }
 
 .workspace {
-  border-radius: 10px;
-  background-color: #383E42;
+  background-color: #9F5255;
   border-bottom-width: 2px;
   border-bottom-style: solid;
-  border-bottom-color: #292C33;
+  border-bottom-color: #7C444F;
   transition: all 0.3s ease;
 }
 
 .workspace.focused {
-  background-color: #1793d1;
-  border-bottom-color: #0F6F9A;
+  background-color: #F39E60;
+  border-bottom-color: #E16A54;
 }
 
 .workspace.urgent {
-  background-color: #A53C9A;
-  border-bottom-color: #7A2B6D;
+  background-color: #E16A54;
+  border-bottom-color: #7C444F;
 }
