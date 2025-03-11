@@ -38,7 +38,7 @@ M.base_16 = {
   base00 = "#121212",
   base01 = "#222222",
   base02 = "#323232",
-  base03 = "#444444",
+  base03 = "#90B0D9",
   base04 = "#9F5255",
   base05 = "#F39E60",
   base06 = "#f5b07f",
@@ -59,7 +59,7 @@ M.polish_hl = {
   defaults = {
     Comment = {
       fg = M.base_16.base03,
-      italic = true,
+      italic = true
     }
   },
   treesitter = {

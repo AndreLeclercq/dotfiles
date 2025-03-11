@@ -64,7 +64,7 @@ M.polish_hl = {
   defaults = {
     Comment = {
       fg = M.base_16.base03,
-      italic = true,
+      italic = false
     }
   },
   treesitter = {
@@ -76,7 +76,7 @@ M.polish_hl = {
     ["@constant"] = { fg = M.base_16.base09 },
     ["@parameter"] = { fg = M.base_16.base05 },
     ["@field"] = { fg = M.base_16.base05 },
-    ["@comment"] = { fg = M.base_16.base03, italic = true },
+    ["@comment"] = { fg = M.base_16.base03, italic = false },
   },
 }
 

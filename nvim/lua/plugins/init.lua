@@ -12,7 +12,6 @@ return {
       require "configs.lspconfig"
     end,
   },
-
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
@@ -22,6 +21,20 @@ return {
         "python"
       },
     },
+  },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+    config = function()
+      require("telescope").setup {
+        extensions = {
+          file_browser = {
+            hijack_netrw = true,
+          },
+        }
+      }
+      require("telescope").load_extension "file_browser"
+    end
   },
   {
     "mrcjkb/rustaceanvim",
@@ -104,6 +117,34 @@ return {
         },
         extra_groups = {}, -- table: additional groups that should be cleared
         exclude_groups = {}, -- table: groups you don't want to clear
+      })
+    end
+  },
+  {
+    "akinsho/toggleterm.nvim",
+    lazy = false,
+    version = "*",
+    config = function()
+      require("toggleterm").setup({
+        size = function(term)
+          if term.direction == "horizontal" then
+            return 15
+          elseif term.direction == "vertical" then
+            return vim.o.columns * 0.4
+          end
+        end,
+        hide_numbers = true,
+        shade_terminals = true,
+        start_in_insert = true,
+        insert_mappings = true,
+        terminal_mappings = true,
+        persist_size = true,
+        direction = "float",
+        close_on_exit = false,
+        shell = vim.o.shell,
+        float_opts = {
+          winblend = 0,
+        }
       })
     end
   }
