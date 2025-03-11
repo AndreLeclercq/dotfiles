@@ -21,7 +21,7 @@ gaps inner 10
 gaps outer 0
 gaps top 0
 
-default_border pixel 0
+default_border pixel 2
 default_floating_border pixel 0
 
 #for_window [class="^.*"] border pixel 3
