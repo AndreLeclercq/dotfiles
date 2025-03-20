@@ -21,6 +21,7 @@ map("t", "<leader>tv", "<cmd>lua set_terminal_direction('vertical')<CR>", { desc
 map("t", "<leader>th", "<cmd>lua set_terminal_direction('horizontal')<CR>", { desc = "Set terminal to horizontal" })
 map("t", "<leader>tf", "<cmd>lua set_terminal_direction('float')<CR>", { desc = "Set terminal to float" })
 
+map("n", "<leader>fs", "<cmd>Telescope treesitter<CR>", { desc = "Show file structure" })
 -- Fonction pour changer la direction du terminal
 function _G.set_terminal_direction(direction)
   local term = require('toggleterm.terminal').get_or_create_term(1)
