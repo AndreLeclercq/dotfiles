@@ -1,11 +1,8 @@
 return {
   {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
     opts = require "configs.conform",
   },
-
-  -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -46,15 +43,9 @@ return {
   {
     "folke/noice.nvim",
     event = "VeryLazy",
-    opts = {
-      -- add any options here
-    },
+    opts = {},
     dependencies = {
-      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
       "MunifTanjim/nui.nvim",
-      -- OPTIONAL:
-      --   `nvim-notify` is only needed, if you want to use the notification view.
-      --   If not available, we use `mini` as the fallback
       "rcarriga/nvim-notify",
     },
     lazy = false,
@@ -67,10 +58,39 @@ return {
             transparency = 100,
           },
         },
+        messages = {
+          enabled = true,
+          view = "notify",
+          view_error = "notify",
+          view_warn = false,
+          view_history = "messages",
+          view_search = false,
+        },
         lsp = {
-          signature = {
-            enabled = false,
+          signature = { enabled = false },
+          hover = { enabled = false },
+          message = { enabled = false },
+          progress = { enabled = false },
+          override = {
+            ["vim.lsp.util.convert_input_to_markdown_lines"] = false,
+            ["vim.lsp.util.stylize_markdown"] = false,
+            ["cmp.entry.get_documentation"] = false,
           },
+        },
+        routes = {
+          {
+            filter = {
+              event = "msg_show",
+              find = "rustacean",
+            },
+            opts = { skip = true },
+          },
+        },
+        presets = {
+          bottom_search = false,
+          command_palette = true,
+          long_message_to_split = false,
+          lsp_doc_border = false,
         },
       }
       require("notify").setup({
@@ -82,7 +102,6 @@ return {
   {
     "kdheepak/lazygit.nvim",
     lazy = false,
-    -- optional for floating window border decoration
     requires = {
         "nvim-lua/plenary.nvim",
     },
