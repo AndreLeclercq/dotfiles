@@ -20,6 +20,7 @@ This repository contains my personal configuration files for various application
 - PulseAudio
 - XDG-autostart
 - i3lock
+- catppuccin-cursors-mocha
 
 ### Required Fonts
 
