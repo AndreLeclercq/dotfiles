@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "vop",
+  --theme = "catppuccin-mocha",
   font = {
     family = "Hack",
     size = 14,

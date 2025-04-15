@@ -38,6 +38,10 @@ exec_always --no-startup-id xrandr --output DP-2 --rotate inverted
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
+exec_always --no-startup-id xrdb -merge ~/.Xresources
+
+exec_always --no-startup-id oneko
+
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
@@ -225,18 +229,18 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Base colors
-set $bg         #7C444F
-set $bg-alt     #9F5255
-set $fg         #F39E60
-set $fg-dim     #E16A54
-set $black      #4a2930
-set $red        #cc4044
-set $green      #7cae7f
-set $yellow     #d7ae5f
-set $blue       #6791c9
-set $purple     #7C444F
-set $cyan       #F39E60
-set $grey       #9F5255
+set $bg         #1e1e2e
+set $bg-alt     #181825
+set $fg         #cdd6f4
+set $fg-dim     #bac2de
+set $black      #11111b
+set $red        #f38ba8
+set $green      #a6e3a1
+set $yellow     #f9e2af
+set $blue       #89b4fa
+set $purple     #cba6f7
+set $cyan       #74c7ec
+set $grey       #9399b2
 
 # Class                  border    background  text     indicator  child_border
 client.focused           $fg       $bg-alt     $fg      $fg        $fg

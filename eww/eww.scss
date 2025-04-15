@@ -5,11 +5,11 @@
 }
 
 .bar {
-  background-color: #7C444F;
-  color: #eeeeee;
+  background-color: #1e1e2e; /* Mocha base */
+  color: #cdd6f4; /* Mocha text */
   transition-property: background-color;
   transition-duration: 0.5s;
-  border-bottom-color: #4a2930;
+  border-bottom-color: #11111b; /* Mocha crust */
   border-bottom-style: solid;
   padding: 0px;
   margin: 0px;
@@ -43,57 +43,63 @@
 .date,
 .clock,
 .workspace-display {
-  background-color: #9F5255;
-  border-bottom-color: #7C444F;
+  background-color: #313244; /* Mocha surface0 */
+  border-bottom-color: #45475a; /* Mocha surface1 */
 }
 
 .linux-version {
-  background-color: #F39E60;
-  color: #4a2930;
-  border-bottom-color: #E16A54;
+  background-color: #fab387; /* Mocha peach */
+  color: #313244; /* Mocha crust - dark text for readability */
+  border-bottom-color: #f38ba8; /* Mocha red */
 }
 
 .git-version {
-  background-color: #ff9e64;
-  border-bottom-color: #f7768e;
+  background-color: #f2cdcd; /* Mocha flamingo */
+  color: #313244; /* Mocha crust - dark text for readability */
+  border-bottom-color: #f38ba8; /* Mocha red */
 }
 
 .docker-version {
-  background-color: #7aa2f7;
-  border-bottom-color: #5676c5;
+  background-color: #89b4fa; /* Mocha blue */
+  color: #313244; /* Mocha crust - dark text for readability */
+  border-bottom-color: #74c7ec; /* Mocha sapphire */
 }
 
 .rust-version {
-  background-color: #e0af68;
-  border-bottom-color: #b38d53;
+  background-color: #f9e2af; /* Mocha yellow */
+  color: #313244; /* Mocha crust - dark text for readability */
+  border-bottom-color: #fab387; /* Mocha peach */
 }
 
 .node-version {
-  background-color: #9ece6a;
-  color: #4a2930;
-  border-bottom-color: #7ea554;
+  background-color: #a6e3a1; /* Mocha green */
+  color: #313244; /* Mocha crust - dark text for readability */
+  border-bottom-color: #94e2d5; /* Mocha teal */
 }
 
 .updates {
-  background-color: #E16A54;
-  border-bottom-color: #9F5255;
+  background-color: #f38ba8; /* Mocha red */
+  color: #45475a; /* Mocha text */
+  border-bottom-color: #eba0ac; /* Mocha maroon */
   padding-left: 12px;
 }
 
 .workspace {
-  background-color: #9F5255;
+  background-color: #313244; /* Mocha surface0 */
   border-bottom-width: 2px;
   border-bottom-style: solid;
-  border-bottom-color: #7C444F;
+  border-bottom-color: #45475a; /* Mocha surface1 */
   transition: all 0.3s ease;
 }
 
 .workspace.focused {
-  background-color: #F39E60;
-  border-bottom-color: #E16A54;
+  background-color: #cba6f7; /* Mocha mauve */
+  color: #313244; /* Mocha crust - dark text for readability */
+  border-bottom-color: #b4befe; /* Mocha lavender */
 }
 
 .workspace.urgent {
-  background-color: #E16A54;
-  border-bottom-color: #7C444F;
+  background-color: #f38ba8; /* Mocha red */
+  color: #313244; /* Mocha text */
+  border-bottom-color: #45475a; /* Mocha surface1 */
 }

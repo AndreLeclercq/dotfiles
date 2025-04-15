@@ -125,23 +125,6 @@ return {
     end
   },
   {
-    'xiyaowong/transparent.nvim',
-    lazy = false,
-    config = function()
-      require("transparent").setup({
-        groups = { -- table: default groups
-          'Normal', 'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',
-          'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String',
-          'Function', 'Conditional', 'Repeat', 'Operator', 'Structure',
-          'LineNr', 'NonText', 'SignColumn', 'CursorLine', 'CursorLineNr',
-          'StatusLine', 'StatusLineNC', 'EndOfBuffer', 'Treesitter'
-        },
-        extra_groups = {}, -- table: additional groups that should be cleared
-        exclude_groups = {}, -- table: groups you don't want to clear
-      })
-    end
-  },
-  {
     "akinsho/toggleterm.nvim",
     lazy = false,
     version = "*",
@@ -212,6 +195,11 @@ return {
       -- See also `vertical_bar_cursor_insert_mode` and `distance_stop_animating_vertical_bar`.
       smear_insert_mode = true,
     },
+  },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000
   }
 }
 
