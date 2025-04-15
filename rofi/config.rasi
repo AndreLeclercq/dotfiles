@@ -6,7 +6,7 @@ configuration {
     sorting-method:             "fzf";
 }
 
-@import                          "./colors.rasi"
+@import                          "./catppuccin-default.rasi"
 @import                          "./fonts.rasi"
 
 window {
