@@ -88,7 +88,6 @@
        :space-evenly false
     (updates)
     (linux-version)
-    (git-version)
     (docker-version)
     (rust-version)
     (node-version)))

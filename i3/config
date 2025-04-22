@@ -31,8 +31,6 @@ exec_always --no-startup-id xrandr --output HDMI-0 --primary --mode 1920x1080 --
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
-exec_always --no-startup-id xrdb -merge ~/.Xresources
-
 exec_always --no-startup-id oneko
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
@@ -76,7 +74,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+#bindsym $mod+d exec --no-startup-id dmenu_run
 
 bindsym $mod+e exec --no-startup-id thunar
 

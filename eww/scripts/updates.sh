@@ -5,16 +5,16 @@ check_updates() {
     pacman_updates=$(pacman -Qu 2>/dev/null | wc -l)
 
     # Vérification des mises à jour AUR
-    aur_updates=$(paru -Qua 2>/dev/null | wc -l)
+    aur_updates=$(paru -qua 2>/dev/null | wc -l)
 
     # Calcul du total des mises à jour
     total_updates=$((pacman_updates + aur_updates))
 
     # Affichage du résultat
     if [ $total_updates -gt 0 ]; then
-      echo " $total_updates"
+      echo "  $total_updates"
     else
-      echo " "
+      echo "  "
     fi
 }
 
