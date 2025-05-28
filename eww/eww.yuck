@@ -199,7 +199,7 @@
        :space-evenly false
        :halign "start"
     (for workspace in workspaces
-      (box :visible {workspace.name == "3" || workspace.name == "4"}
+      (box :visible {workspace.name == "1" || workspace.name == "2" || workspace.name == "3"}
         (workspace-entry :name "${workspace.name}"
                         :focused "${workspace.focused}"
                         :urgent "${workspace.urgent}")))))
@@ -210,7 +210,7 @@
        :space-evenly false
        :halign "start"
     (for workspace in workspaces
-      (box :visible {workspace.name == "5" || workspace.name == "6"}
+      (box :visible {workspaces.name == "4" || workspace.name == "5" || workspace.name == "6"}
         (workspace-entry :name "${workspace.name}"
                         :focused "${workspace.focused}"
                         :urgent "${workspace.urgent}")))))

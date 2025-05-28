@@ -24,8 +24,8 @@ gaps top 0
 default_border pixel 2
 default_floating_border pixel 0
 
-# Reverse screen
-exec_always --no-startup-id xrandr --output HDMI-0 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-0 --mode 1920x1080 --pos 0x0 --rotate inverted --output DP-2 --mode 1920x1080 --pos 3840x0 --rotate inverted
+exec_always --no-startup-id xrandr --output DP-4 --rotate normal --pos 0x0 --primary
+exec_always --no-startup-id xrandr --output DP-2 --rotate right --pos 1920x0
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -51,7 +51,7 @@ exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id feh --bg-fill --randomize ~/.config/wallpapers/
 
 # Start Eww bar
-exec_always --no-startup-id eww daemon && eww open bar0 && eww open bar2 && eww open bar1
+exec_always --no-startup-id eww daemon && eww open bar2 && eww open bar1
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -148,10 +148,10 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-workspace $ws1 output DP-0
-workspace $ws2 output DP-0
-workspace $ws3 output HDMI-0
-workspace $ws4 output HDMI-0
+workspace $ws1 output DP-4
+workspace $ws2 output DP-4
+workspace $ws3 output DP-4
+workspace $ws4 output DP-2
 workspace $ws5 output DP-2
 workspace $ws6 output DP-2
 
